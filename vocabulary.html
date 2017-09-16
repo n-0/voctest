@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src='./vocabulary.js'></script>
+	<link rel="stylesheet" href="./spectre.min.css">
+</head>
+<body>
+<center>
+	<div class='container'>
+		<div class=columns>
+			<div class='column'>
+				<input class='form-input input-lg' type='text' placeholder='Vocabulary' id='vocabulary'>
+		</div>
+		<div class='column'>
+			<input class='form-input input-lg' type='text' placeholder='Translation' id='translation'>
+		</div>
+	</div>
+	<div class='columns'>
+		<div class='column'>
+			<button id='addtranslation'>Add Translation</button>
+		</div>
+		<div class='column'>
+			<button id="starttest">Start Test</button>
+		</div>
+	</div>
+</div>
+<hr>
+<div class='container test'>
+	<div class='columns'>
+		<div class='column' id='words'></div>
+		<div class='columns' id='words1'></div>
+	</div>
+	<center><button id='evaluation'>Evaluate</button></center>
+</div>
+</div>
+</center>
+</body>
+</html>
