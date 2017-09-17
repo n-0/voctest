@@ -1,12 +1,12 @@
 var dictionary = {};
 
 function createword(index) {
-  var word = $('#words');
+  var columns = $('<div class="columns"></div>');
   var div = $('<div class="column"></div>').html(index);
-  word.append(div);
-  var words1 = $('#words1');
   var div1 = $('<div class="column"></div>').html($('<input type="text">').attr('id', index));
-  words1.append(div1);
+  div2 = div.append(div1);
+  columns.html(div2);
+  $('#words').append(columns);
 }
 
 function evaluation() {
@@ -34,6 +34,8 @@ function savevocabulary() {
     dictionary[$('#vocabulary').val()] = $('#translation').val();
     console.log($('#vocabulary').val());
   }
+  $('#vocabulary').val('');
+  $('#translation').val('');
 }
 
 function starttest() {
