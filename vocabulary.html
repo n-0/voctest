@@ -11,12 +11,6 @@
 		transition: height 2s, width 4s;
 		background-color: #f4f4ff;
 	}
-	button {
-		margin: 5px;
-		opacity: 100%;
-		border: 2px  #f4f4ff;
-		border-radius: 3px;
-	}
 	</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src='./vocabulary.js'></script>
@@ -35,10 +29,10 @@
 	</div>
 	<div class='columns'>
 		<div class='column'>
-			<button id='addtranslation'>Add Translation</button>
+			<button class='btn' id='addtranslation'>Add Translation</button>
 		</div>
 		<div class='column'>
-			<button id="starttest">Start Test</button>
+			<button class='btn' id="starttest">Start Test</button>
 		</div>
 	</div>
 </div>
@@ -47,12 +41,12 @@
 	<div class='columns' id='words'>
 	</div>
 	</div>
-<center><button id='evaluation'>Evaluate</button></center>
+<center><button class='btn' id='evaluation'>Evaluate</button></center>
 <center><div id='testresult'>
 	<center><h3 >Results<h3></center>
 	<div>Right:<p id='right'></p></div>
 	<div>Wrong:<p id='wrong'></p></div>
-	<center><button id='restart'>Restart Test</button></center>
+	<center><button class='btn' id='restart'>Restart Test</button></center>
 </div>
 </center>
 </body>

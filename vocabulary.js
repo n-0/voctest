@@ -1,5 +1,5 @@
 var dictionary = {};
-var wronglist = [];
+var wrongdict = {};
 
 function createword(index) {
   var columns = $('<div class="columns"></div>');
@@ -11,6 +11,7 @@ function createword(index) {
 }
 
 function evaluation() {
+  wrongdict = {};
   var right = 0;
   var wrong = 0;
     for (var key in dictionary) {
@@ -20,8 +21,8 @@ function evaluation() {
       }
       else {
         wrong += 1;
-        wronglist.push(dictionary[key]);
-        console.log(wronglist);
+        wrongdict[key] = dictionary[key];
+        console.log(wrongdict);
       }
     }
   $('#right').html(right);
@@ -29,6 +30,7 @@ function evaluation() {
   if (right == Object.keys(dictionary).length) {
     $('#restart').text('You did a great job');
     $('#restart').on('click', function() {location.reload();});
+
   }
   else {
     $('#restart').on('click', function(){restarttest();})
@@ -49,8 +51,8 @@ function savevocabulary() {
 }
 
 function starttest() {
+  $('#words').empty();
   if (Object.keys(dictionary).length == 0) {
-    alert('there is no test');
     return;
   }
   for (var key in dictionary) {
@@ -59,22 +61,14 @@ function starttest() {
 }
 
 function restarttest() {
-  for (i in dictionary) {
-    var x = dictionary[i];
-    if (wronglist.indexOf(x) == -1) {
-      console.log('Problem');
-      delete dictionary[i];
-    }
-  }
+  dictionary = wrongdict;
   $('#words').empty();
   $('#testresult').css('visibility', 'hidden');
   starttest();
 }
 
 $(document).ready(function(){
-addtranslation = $('#addtranslation');
-startingdocument = $('#starttest');
-addtranslation.on('click', function(){savevocabulary();});
-startingdocument.on('click', function(){starttest();});
+$('#addtranslation').on('click', function(){savevocabulary();});
+$('#starttest').on('click', function(){starttest();});
 $('#evaluation').on('click', function(){evaluation();});
 });
